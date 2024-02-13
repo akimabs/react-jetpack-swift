@@ -1,20 +1,17 @@
 package com.sinaureact.dashboard.statistic
 
+import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.OnBackPressedDispatcher
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.ripple.rememberRipple
@@ -33,7 +30,6 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.sinaureact.R
 import com.sinaureact.theme.Colors
@@ -42,12 +38,17 @@ import kotlin.random.Random
 class StatisticActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val data = intent.getSerializableExtra("data") as ArrayList<Any>?
+        val data = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            intent.getSerializableExtra("data", ArrayList::class.java) as ArrayList<Any>?
+        } else {
+            intent.getSerializableExtra("data") as ArrayList<Any>?
+        }
         setContent {
-                StatisticScreen(onBackPressedDispatcher, data)
+            StatisticScreen(onBackPressedDispatcher, data)
         }
     }
 }
+
 
 @Composable
 fun StatisticScreen(backDispatcher: OnBackPressedDispatcher, data: ArrayList<Any>?) {
@@ -148,19 +149,17 @@ fun WrapperChart(data: ArrayList<Any>?) {
         }
     }
 }
+
 @Composable
 fun ChartItem(item: Any) {
     val configuration = LocalConfiguration.current
     val screenWidth = configuration.screenWidthDp.dp
-
-    var randomHeight by remember { mutableStateOf(generateRandomHeight()) }
     var isTooltipVisible by remember { mutableStateOf(false) }
 
     if (item is Map<*, *>) {
         val amount = (item["amount"] as? Number)?.toDouble()
         val calculateHeight = amount?.times(0.02)?.toInt()
         Box(modifier = Modifier) {
-            // Image
             Box(
                 modifier = Modifier
                     .height((calculateHeight?.dp) ?: 0.dp)
@@ -216,9 +215,3 @@ private fun onBackPressed(backDispatcher: OnBackPressedDispatcher) {
 private fun generateRandomHeight(): Int {
     return Random.nextInt(150) + 50
 }
-
-data class TDataTrx(
-    val description: String,
-    val usage: String,
-    val amount: Number
-)
