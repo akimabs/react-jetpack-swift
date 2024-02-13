@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="darkCustom">#212121</color>
+    <color name="greenCustom">#3c664a</color>
+    <color name="whiteCustom">#f6f5f0</color>
+    <color name="greyCustom">#b8b8b8</color>
+    <color name="yellowCustom">#c8ab60</color>
+</resources>
