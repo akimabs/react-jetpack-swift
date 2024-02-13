@@ -38,6 +38,10 @@ target 'sinaureact' do
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
+ 
+ #Add Custom Pod for ios here
+  pod 'SnapKit'
+ 
 
   target 'sinaureactTests' do
     inherit! :complete

@@ -14,6 +14,9 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-sinaureact-sinaureactTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-sinaureact-sinaureactTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		E1B3AE852B7B53540039D94A /* CustomModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B3AE842B7B53540039D94A /* CustomModule.m */; };
+		E1B3AE9C2B7BDDEA0039D94A /* HorizontalSlideAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B3AE9B2B7BDDEA0039D94A /* HorizontalSlideAnimator.m */; };
+		E1B3AEA72B7BEE790039D94A /* StatisticViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3AEA62B7BEE790039D94A /* StatisticViewcontroller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,12 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-sinaureact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sinaureact.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = sinaureact/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-sinaureact-sinaureactTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sinaureact-sinaureactTests.release.xcconfig"; path = "Target Support Files/Pods-sinaureact-sinaureactTests/Pods-sinaureact-sinaureactTests.release.xcconfig"; sourceTree = "<group>"; };
+		E1B3AE832B7B53540039D94A /* CustomModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomModule.h; sourceTree = "<group>"; };
+		E1B3AE842B7B53540039D94A /* CustomModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomModule.m; sourceTree = "<group>"; };
+		E1B3AE9A2B7BDDEA0039D94A /* HorizontalSlideAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HorizontalSlideAnimator.h; sourceTree = "<group>"; };
+		E1B3AE9B2B7BDDEA0039D94A /* HorizontalSlideAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HorizontalSlideAnimator.m; sourceTree = "<group>"; };
+		E1B3AEA12B7BE6860039D94A /* sinaureact-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "sinaureact-Bridging-Header.h"; sourceTree = "<group>"; };
+		E1B3AEA62B7BEE790039D94A /* StatisticViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewcontroller.swift; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -86,12 +95,19 @@
 		13B07FAE1A68108700A75B9A /* sinaureact */ = {
 			isa = PBXGroup;
 			children = (
+				E1B3AEA82B7BF0A00039D94A /* Extension */,
+				E1B3AE892B7B5EB40039D94A /* Dashboard */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				E1B3AE832B7B53540039D94A /* CustomModule.h */,
+				E1B3AE842B7B53540039D94A /* CustomModule.m */,
+				E1B3AE9A2B7BDDEA0039D94A /* HorizontalSlideAnimator.h */,
+				E1B3AE9B2B7BDDEA0039D94A /* HorizontalSlideAnimator.m */,
+				E1B3AEA12B7BE6860039D94A /* sinaureact-Bridging-Header.h */,
 			);
 			name = sinaureact;
 			sourceTree = "<group>";
@@ -146,6 +162,29 @@
 				89C6BE57DB24E9ADA2F236DE /* Pods-sinaureact-sinaureactTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E1B3AE892B7B5EB40039D94A /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				E1B3AE8A2B7B5EBA0039D94A /* Statistic */,
+			);
+			name = Dashboard;
+			sourceTree = "<group>";
+		};
+		E1B3AE8A2B7B5EBA0039D94A /* Statistic */ = {
+			isa = PBXGroup;
+			children = (
+				E1B3AEA62B7BEE790039D94A /* StatisticViewcontroller.swift */,
+			);
+			name = Statistic;
+			sourceTree = "<group>";
+		};
+		E1B3AEA82B7BF0A00039D94A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,7 +245,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1430;
 					};
 				};
 			};
@@ -392,8 +431,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1B3AE9C2B7BDDEA0039D94A /* HorizontalSlideAnimator.m in Sources */,
+				E1B3AEA72B7BEE790039D94A /* StatisticViewcontroller.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				E1B3AE852B7B53540039D94A /* CustomModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +454,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-sinaureact-sinaureactTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -439,6 +482,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-sinaureact-sinaureactTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = sinaureactTests/Info.plist;
@@ -466,6 +510,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BYT2YSRPFL;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = sinaureact/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -480,6 +525,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = sinaureact;
+				SWIFT_OBJC_BRIDGING_HEADER = "sinaureact-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -493,6 +539,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BYT2YSRPFL;
 				INFOPLIST_FILE = sinaureact/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -506,6 +553,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = sinaureact;
+				SWIFT_OBJC_BRIDGING_HEADER = "sinaureact-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -580,10 +628,7 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -651,10 +696,7 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;

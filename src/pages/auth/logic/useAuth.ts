@@ -1,4 +1,4 @@
-import {StackActions, useNavigation} from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import {useMemo} from 'react';
 
 const useAuth = () => {
@@ -9,7 +9,7 @@ const useAuth = () => {
   );
 
   const _navigateToDashboard = () => {
-    navigation.dispatch(StackActions.replace('Dashboard'));
+    navigation.navigate('Dashboard' as never);
   };
 
   return {
