@@ -14,9 +14,10 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-sinaureact-sinaureactTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-sinaureact-sinaureactTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		E1099EE32B89ECCF0066E5E3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1099EE22B89ECCF0066E5E3 /* DetailViewController.swift */; };
 		E1B3AE852B7B53540039D94A /* CustomModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B3AE842B7B53540039D94A /* CustomModule.m */; };
 		E1B3AE9C2B7BDDEA0039D94A /* HorizontalSlideAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B3AE9B2B7BDDEA0039D94A /* HorizontalSlideAnimator.m */; };
-		E1B3AEA72B7BEE790039D94A /* StatisticViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3AEA62B7BEE790039D94A /* StatisticViewcontroller.swift */; };
+		E1B3AEA72B7BEE790039D94A /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3AEA62B7BEE790039D94A /* StatisticViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,12 +47,13 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-sinaureact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sinaureact.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = sinaureact/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-sinaureact-sinaureactTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sinaureact-sinaureactTests.release.xcconfig"; path = "Target Support Files/Pods-sinaureact-sinaureactTests/Pods-sinaureact-sinaureactTests.release.xcconfig"; sourceTree = "<group>"; };
+		E1099EE22B89ECCF0066E5E3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E1B3AE832B7B53540039D94A /* CustomModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomModule.h; sourceTree = "<group>"; };
 		E1B3AE842B7B53540039D94A /* CustomModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomModule.m; sourceTree = "<group>"; };
 		E1B3AE9A2B7BDDEA0039D94A /* HorizontalSlideAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HorizontalSlideAnimator.h; sourceTree = "<group>"; };
 		E1B3AE9B2B7BDDEA0039D94A /* HorizontalSlideAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HorizontalSlideAnimator.m; sourceTree = "<group>"; };
 		E1B3AEA12B7BE6860039D94A /* sinaureact-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "sinaureact-Bridging-Header.h"; sourceTree = "<group>"; };
-		E1B3AEA62B7BEE790039D94A /* StatisticViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewcontroller.swift; sourceTree = "<group>"; };
+		E1B3AEA62B7BEE790039D94A /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -164,9 +166,18 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E1099EE12B89ECB60066E5E3 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E1099EE22B89ECCF0066E5E3 /* DetailViewController.swift */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
 		E1B3AE892B7B5EB40039D94A /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				E1099EE12B89ECB60066E5E3 /* Detail */,
 				E1B3AE8A2B7B5EBA0039D94A /* Statistic */,
 			);
 			name = Dashboard;
@@ -175,7 +186,7 @@
 		E1B3AE8A2B7B5EBA0039D94A /* Statistic */ = {
 			isa = PBXGroup;
 			children = (
-				E1B3AEA62B7BEE790039D94A /* StatisticViewcontroller.swift */,
+				E1B3AEA62B7BEE790039D94A /* StatisticViewController.swift */,
 			);
 			name = Statistic;
 			sourceTree = "<group>";
@@ -432,8 +443,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1B3AE9C2B7BDDEA0039D94A /* HorizontalSlideAnimator.m in Sources */,
-				E1B3AEA72B7BEE790039D94A /* StatisticViewcontroller.swift in Sources */,
+				E1B3AEA72B7BEE790039D94A /* StatisticViewController.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				E1099EE32B89ECCF0066E5E3 /* DetailViewController.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				E1B3AE852B7B53540039D94A /* CustomModule.m in Sources */,
 			);

@@ -6,5 +6,7 @@
 #import <React/RCTBridgeModule.h>
 
 @interface RCT_EXTERN_MODULE(StatisticViewController, UIViewController)
+@end
 
+@interface RCT_EXTERN_MODULE(DetailViewController, UIViewController)
 @end
