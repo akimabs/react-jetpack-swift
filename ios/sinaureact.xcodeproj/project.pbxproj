@@ -525,6 +525,7 @@
 				DEVELOPMENT_TEAM = BYT2YSRPFL;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = sinaureact/Info.plist;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -553,6 +554,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BYT2YSRPFL;
 				INFOPLIST_FILE = sinaureact/Info.plist;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

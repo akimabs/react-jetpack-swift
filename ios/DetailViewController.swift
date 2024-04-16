@@ -1,5 +1,5 @@
 //
-//  DetailViewController.swift
+//  StatisticViewController.swift
 //  sinaureact
 //
 //  Created by Abdul Hakim on 13/02/24.
@@ -10,52 +10,72 @@ import SnapKit
 
 @objc(DetailViewController)
 public class DetailViewController: UIViewController {
-
-    let mainView = UIView()
-    let centeredText = UILabel()
-
-    public override func viewDidLoad() {
-        super.viewDidLoad()
-        setupView()
-        setupGesture()
-        setupNavigationBar()
-    }
-
-    func setupGesture() {
-        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
-        swipeRecognizer.direction = .right
-        view.addGestureRecognizer(swipeRecognizer)
-    }
-
-    func setupView() {
-        view.backgroundColor = .red
-
-        mainView.backgroundColor = .white
-        view.addSubview(mainView)
-
-        mainView.snp.makeConstraints { make in
-            make.top.equalTo(view.snp.topMargin)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
-            make.left.right.equalToSuperview()
-        }
-    }
-
-    func setupNavigationBar() {
-        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .done, target: self, action: #selector(goBack))
-        self.navigationItem.leftBarButtonItem = backButton
-    }
   
-    @objc func goBack() {
-      self.navigationController?.popViewController(animated: true)
-    }
+  private let mainView = UIView()
+  
+  public override func viewDidLoad() {
+    super.viewDidLoad()
+    setupView()
+    setupGesture()
+  }
 
-    @objc func handleSwipe(_ gestureRecognizer: UISwipeGestureRecognizer) {
-        if gestureRecognizer.state == .ended {
-            dismiss(animated: true, completion: nil)
-        }
+  private func setupGesture() {
+    let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+    swipeRecognizer.direction = .right
+    view.addGestureRecognizer(swipeRecognizer)
+  }
+  
+  private func setupView() {
+    setupMainView()
+    setupNavigationBar()
+  }
+  
+  private func setupMainView() {
+    view.backgroundColor = .fromHex(0x212121)
+    view.addSubview(mainView)
+    
+    mainView.backgroundColor = .fromHex(0x212121)
+    
+    mainView.snp.makeConstraints { make in
+        make.top.equalToSuperview()
+        make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        make.left.right.equalToSuperview()
     }
+  }
+  
+  private func setupNavigationBar() {
+    let backButton = UIBarButtonItem(image: UIImage(named: "icon.back"), style: .done, target: self, action: #selector(goBack))
+    backButton.tintColor = .white
+    
+    let nextButton = UIBarButtonItem(title: "Next", style: .done, target: self, action: #selector(navigateToNextPage))
 
-    @objc static func requiresMainQueueSetup() -> Bool {
-        return true
+    let buttonSize = CGSize(width: 100, height: 100)
+    backButton.customView?.frame = CGRect(origin: .zero, size: buttonSize)
+
+    self.navigationItem.leftBarButtonItem = backButton
+    self.navigationItem.rightBarButtonItem = nextButton
+    self.navigationItem.title = "Detail"
+    self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+  }
+
+
+  @objc func goBack() {
+    navigationController?.popViewController(animated: true)
+  }
+  
+  @objc func navigateToNextPage() {
+    let nextViewController = StatisticViewController()
+    navigationController?.pushViewController(nextViewController, animated: true)
+  }
+  
+  @objc func handleSwipe(_ gestureRecognizer: UISwipeGestureRecognizer) {
+    if gestureRecognizer.state == .ended {
+      goBack()
     }
+  }
+  
+  @objc static func requiresMainQueueSetup() -> Bool {
+    return true
+  }
+  
 }

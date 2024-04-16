@@ -1,5 +1,6 @@
 package com.sinaureact.dashboard.statistic
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -27,6 +28,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.ColorPainter
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -43,6 +45,7 @@ class StatisticActivity : ComponentActivity() {
         } else {
             intent.getSerializableExtra("data") as ArrayList<Any>?
         }
+
         setContent {
             StatisticScreen(onBackPressedDispatcher, data)
         }
@@ -52,6 +55,7 @@ class StatisticActivity : ComponentActivity() {
 
 @Composable
 fun StatisticScreen(backDispatcher: OnBackPressedDispatcher, data: ArrayList<Any>?) {
+    val context = LocalContext.current
     Column(
         modifier = Modifier
             .fillMaxSize()

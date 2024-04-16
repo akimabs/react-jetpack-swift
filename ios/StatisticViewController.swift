@@ -13,7 +13,6 @@ public class StatisticViewController: UIViewController {
   
   private let mainView = UIView()
   
-  
   public override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
@@ -35,23 +34,30 @@ public class StatisticViewController: UIViewController {
     view.backgroundColor = .fromHex(0x212121)
     view.addSubview(mainView)
     
-    mainView.backgroundColor = .white
+    mainView.backgroundColor = .fromHex(0x212121)
     
     mainView.snp.makeConstraints { make in
-        make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+        make.top.equalToSuperview()
         make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         make.left.right.equalToSuperview()
     }
   }
   
   private func setupNavigationBar() {
+    let backButton = UIBarButtonItem(image: UIImage(named: "icon.back"), style: .done, target: self, action: #selector(goBack))
+    backButton.tintColor = .white
+    
     let nextButton = UIBarButtonItem(title: "Next", style: .done, target: self, action: #selector(navigateToNextPage))
-    self.navigationItem.rightBarButtonItem  = nextButton
 
-    let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .done, target: self, action: #selector(goBack))
+    let buttonSize = CGSize(width: 100, height: 100)
+    backButton.customView?.frame = CGRect(origin: .zero, size: buttonSize)
+
     self.navigationItem.leftBarButtonItem = backButton
-    self.navigationItem.backButtonTitle = ""
+    self.navigationItem.rightBarButtonItem = nextButton
+    self.navigationItem.title = "Statistics"
+    self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
   }
+
 
   @objc func goBack() {
     dismiss(animated: true, completion: nil)

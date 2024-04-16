@@ -23,15 +23,7 @@ RCT_EXPORT_METHOD(navigateToStatistic:(NSArray<NSDictionary *> *)data) {
 
       // Wrap StatisticsViewController in a UINavigationController
       UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:statisticsVC];
-
-      // Customize navigation bar if needed
-      navController.navigationBar.barTintColor = [UIColor redColor];
-      // Set the title for StatisticViewController
-      statisticsVC.title = @"Your Title";
-
-      // Or set the title for navigation item
-      statisticsVC.navigationItem.title = @"Your Title";
-
+      
       // Set modal presentation style and custom transition
       navController.modalPresentationStyle = UIModalPresentationFullScreen;
       navController.transitioningDelegate = (id<UIViewControllerTransitioningDelegate>)self;

@@ -15,14 +15,9 @@ import com.sinaureact.dashboard.statistic.StatisticActivity
 
 class CustomModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
     private val reactContext: ReactApplicationContext = reactContext
-    private var navController: NavHostController? = null
 
     override fun getName(): String {
         return "CustomModule"
-    }
-
-    fun setNavController(navController: NavHostController) {
-        this.navController = navController
     }
 
     @ReactMethod
